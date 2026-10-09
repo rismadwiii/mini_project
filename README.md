@@ -1,96 +1,30 @@
 # mini_project
 Mini Project: OCR Nomor Ijazah dan Deteksi Tanda Tangan
 
-Deskripsi
+# How to Run
 
-Mini-project ini bertujuan untuk menerapkan pengolahan citra pada gambar ijazah untuk membaca nomor ijazah menggunakan Optical Character Recognition (OCR) dan mendeteksi keberadaan tanda tangan kepala sekolah.
+## 1. Persiapan
 
-Sistem menggunakan beberapa metode peningkatan kualitas citra untuk membantu proses pembacaan karakter. Selain itu, dilakukan thresholding dan operasi morphology untuk mendukung proses deteksi tanda tangan.
+Sebelum menjalankan program, pastikan Python dan Tesseract OCR sudah terpasang di komputer. Kedua perangkat lunak ini diperlukan untuk menjalankan proses pengolahan citra dan membaca nomor ijazah secara otomatis.
 
-Tujuan
+## 2. Instal Library
 
-Menerapkan teknik image enhancement pada citra ijazah.
+Buka folder proyek di Visual Studio Code, kemudian buka terminal. Jalankan perintah `pip install -r requirements.txt` untuk menginstal library yang dibutuhkan oleh program.
 
-Membaca nomor ijazah menggunakan OCR.
+## 3. Menyiapkan Dataset
 
-Mendeteksi keberadaan tanda tangan kepala sekolah.
+Masukkan gambar ijazah yang akan diuji ke dalam folder dataset. Gambar yang digunakan terdiri dari sembilan citra dengan kondisi yang berbeda-beda, mulai dari citra berkualitas baik hingga citra yang buram, memiliki noise, atau kontras rendah.
 
-Membandingkan hasil OCR menggunakan nilai Character Error Rate (CER).
+## 4. Menjalankan Program
 
-Metode
+Setelah semua persiapan selesai, jalankan program dengan mengetikkan `python main.py` pada terminal. Program kemudian akan memulai proses pengolahan citra sesuai dengan tahapan yang telah dibuat.
 
-1. Image Enhancement
+## 5. Memilih Bagian Ijazah
 
-Metode yang digunakan:
+Saat program dijalankan, pilih bagian nomor ijazah yang ingin dibaca. Setelah itu, pilih bagian tanda tangan kepala sekolah yang akan diperiksa. Pemilihan area dilakukan secara manual agar bagian yang diproses sesuai dengan kebutuhan.
 
-Grayscale
+## 6. Melihat Hasil
 
-CLAHE
+Setelah proses selesai, hasilnya dapat diperiksa untuk mengetahui nomor ijazah yang berhasil dibaca dan apakah tanda tangan terdeteksi atau tidak. Hasil pengujian OCR juga dibandingkan menggunakan nilai Character Error Rate (CER) untuk mengetahui tingkat kesalahan pembacaan karakter.
 
-Histogram Equalization
 
-Contrast Stretching
-
-2. Optical Character Recognition (OCR)
-
-Tesseract OCR digunakan untuk mengenali karakter pada area nomor ijazah yang telah dipotong secara manual.
-
-3. Deteksi Tanda Tangan
-
-Proses deteksi tanda tangan meliputi:
-
-Grayscale
-
-Global Thresholding
-
-Otsu Thresholding
-
-Morphological Opening dan Closing
-
-Analisis piksel foreground untuk menentukan status tanda tangan.
-
-4. Evaluasi OCR
-
-Evaluasi dilakukan menggunakan Character Error Rate (CER) untuk membandingkan hasil OCR dengan teks acuan. Semakin rendah nilai CER, semakin baik hasil pembacaan karakter.
-
-Hasil Pengujian
-
-Pada pengujian citra yang dilakukan, metode Grayscale, CLAHE, dan Contrast Stretching menghasilkan CER sebesar 0,0000. Sementara itu, Histogram Equalization menghasilkan OCR kosong dengan CER sebesar 1,0000.
-
-Pada pengujian deteksi tanda tangan, sembilan citra berlabel PRESENT berhasil terdeteksi sebagai PRESENT. Pengujian ini belum mencakup citra tanpa tanda tangan.
-
-Teknologi
-
-Python
-
-OpenCV
-
-NumPy
-
-Pandas
-
-Pytesseract
-
-Tesseract OCR
-
-Dataset
-
-Dataset terdiri dari sembilan citra ijazah dengan variasi kualitas, antara lain:
-
-High Quality
-
-Low Contrast
-
-Blurred
-
-High Noise
-
-Low Resolution
-
-Faded atau Underexposed
-
-Color Shift
-
-JPEG Compression Artifacts
-
-Combined Degradation
